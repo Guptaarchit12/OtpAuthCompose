@@ -1,9 +1,9 @@
-OTPAuthCompose — Passwordless Authentication (Jetpack Compose)
+## OTPAuthCompose — Passwordless Authentication (Jetpack Compose)
 
 A production-ready Android application built using Jetpack Compose and Material 3, demonstrating a secure passwordless authentication flow using Email + OTP.
 The project focuses on clean architecture, reactive state management, and modern Android development best practices.
 
-Project Walkthrough & Setup
+## Project Walkthrough & Setup
 
 Demo Video (Google Drive):
 Includes repository cloning, architecture overview, and a live application walkthrough.
@@ -11,7 +11,7 @@ Includes repository cloning, architecture overview, and a live application walkt
 
 Link: Add your public Google Drive link here
 
-Technical Highlights
+## Technical Highlights
 Modern UI / UX
 
 Fully implemented using Jetpack Compose and Material 3
@@ -57,7 +57,7 @@ OTP delivery simulated using the Snackbar API
 
 Custom duration to mimic real-world delivery behavior during testing
 
-Architecture & Best Practices
+## Architecture & Best Practices
 MVVM Architecture
 
 Clear separation of concerns between:
@@ -88,7 +88,7 @@ OTP validation success and failure
 
 Logout events
 
-Project Structure
+## Project Structure
 app/
 ├── analytics/
 │   └── AnalyticsLogger.kt
@@ -105,7 +105,7 @@ app/
 │   └── AuthUiState.kt
 └── MainActivity.kt
 
-Key Components
+## Key Components
 
 AuthViewModel.kt
 Handles OTP generation, expiry logic, attempt tracking, and session state.
@@ -119,7 +119,7 @@ Displays session start time and live session duration (mm:ss).
 MainActivity.kt
 Application entry point and navigation host.
 
-How to Run the Project
+## How to Run the Project
 Clone the Repository
 git clone https://github.com/Guptaarchit12/OtpAuthCompose.git
 
@@ -137,7 +137,7 @@ Lottie animation files are located at:
 
 app/src/main/res/raw/
 
-Launch
+Launch :
 
 Run on an emulator or physical device
 
@@ -155,7 +155,7 @@ No blocking calls on the main thread
 
 Focused on demonstrating understanding rather than template usage
 
-Author
+## Author
 
 Archit Gupta
 B.Tech Computer Science and Engineering
