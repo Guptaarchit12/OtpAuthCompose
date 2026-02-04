@@ -1,54 +1,162 @@
-A robust, production-ready Android application built with Jetpack Compose and Material 3. This project demonstrates a secure passwordless authentication flow, featuring reactive state management and modern UI/UX principles.
+OTPAuthCompose — Passwordless Authentication (Jetpack Compose)
 
- Project Walkthrough & Setup
-Watch the Demo Video (Google Drive) > Includes: Git cloning guide, technical architecture overview, and live app demonstration.
+A production-ready Android application built using Jetpack Compose and Material 3, demonstrating a secure passwordless authentication flow using Email + OTP.
+The project focuses on clean architecture, reactive state management, and modern Android development best practices.
 
- Technical Highlights
- Modern UI/UX with Lottie
-Integrated Airbnb’s Lottie for vector-based animations to provide high-end visual feedback during the Auth and Verification stages.
+Project Walkthrough & Setup
 
-Fully Responsive Design using Material 3 design tokens, ensuring compatibility across different screen sizes (including foldables).
+Demo Video (Google Drive):
+Includes repository cloning, architecture overview, and a live application walkthrough.
+(Drive access set to “Anyone with the link can view”)
 
- Secure Authentication Logic
-Regex Validation: Industrial-grade email validation that prevents invalid data submission at the UI layer.
+Link: Add your public Google Drive link here
 
-OTP Lifecycle Management: - 60-Second Expiry: Implemented a real-time countdown timer using LaunchedEffect and ViewModel state.
+Technical Highlights
+Modern UI / UX
 
-Attempt Throttling: Security guardrail that locks or resets the session after 3 failed verification attempts.
+Fully implemented using Jetpack Compose and Material 3
 
-Simulated Delivery: Integrated Snackbar API with custom durations to simulate secure OTP delivery for testing.
+Responsive layout supporting multiple screen sizes
 
- Architecture & Best Practices
-MVVM Architecture: Strict separation of concerns to ensure code maintainability.
+Lottie animations integrated to provide visual feedback during:
 
-Unidirectional Data Flow (UDF): UI states are managed via Sealed Interfaces (AuthUiState), making the app logic predictable and easy to test.
+Authentication
 
-Professional Logging: Integrated the Timber SDK for centralized, tree-based logging, essential for production debugging.
+OTP verification
 
- Project Structure
-viewmodel/AuthViewModel.kt: The "Brain" of the app. Handles OTP generation, timer logic, and attempt counting.
+Session transitions
 
-ui/LoginScreen.kt & OtpScreen.kt: Declarative UI components featuring Lottie animations.
+Secure Authentication Logic
+Email Validation
 
-MainActivity.kt: The entry point managing high-level navigation and system UI.
+Regex-based email validation implemented at the UI layer
 
- How to Run the Project
-Clone the Repository:
+Prevents invalid input before OTP generation
 
-Bash
+OTP Lifecycle Management
+
+6-digit OTP generated locally
+
+60-second expiry timer implemented using LaunchedEffect and ViewModel state
+
+Real-time countdown that survives recompositions
+
+Attempt Throttling
+
+Maximum of 3 OTP verification attempts
+
+Generating a new OTP:
+
+Invalidates the previous OTP
+
+Resets the attempt counter
+
+Simulated OTP Delivery
+
+OTP delivery simulated using the Snackbar API
+
+Custom duration to mimic real-world delivery behavior during testing
+
+Architecture & Best Practices
+MVVM Architecture
+
+Clear separation of concerns between:
+
+UI (Compose)
+
+Business logic (ViewModel)
+
+Data handling
+
+Unidirectional Data Flow (UDF)
+
+UI reacts to immutable state updates
+
+Authentication flow managed using sealed UI states
+
+Predictable and testable state transitions
+
+Professional Logging
+
+Timber SDK integrated for centralized, structured logging
+
+Logs key events including:
+
+OTP generation
+
+OTP validation success and failure
+
+Logout events
+
+Project Structure
+app/
+├── analytics/
+│   └── AnalyticsLogger.kt
+├── data/
+│   └── OtpManager.kt
+├── ui/
+│   ├── LoginScreen.kt
+│   ├── OtpScreen.kt
+│   └── SessionScreen.kt
+├── ui.theme/
+│   └── Theme.kt
+├── viewmodel/
+│   ├── AuthViewModel.kt
+│   └── AuthUiState.kt
+└── MainActivity.kt
+
+Key Components
+
+AuthViewModel.kt
+Handles OTP generation, expiry logic, attempt tracking, and session state.
+
+LoginScreen.kt / OtpScreen.kt
+Declarative Compose UI with state-driven rendering and animations.
+
+SessionScreen.kt
+Displays session start time and live session duration (mm:ss).
+
+MainActivity.kt
+Application entry point and navigation host.
+
+How to Run the Project
+Clone the Repository
 git clone https://github.com/Guptaarchit12/OtpAuthCompose.git
-Environment Setup:
 
-Open the project in Android Studio (Ladybug or later).
+Environment Setup
 
-Ensure JDK 17 is configured in your Gradle settings.
+Open the project in Android Studio (Ladybug or later)
 
-Dependency Sync:
+Ensure JDK 17 is configured in Gradle settings
 
-Click the Elephant Icon to sync the build.gradle.kts files.
+Dependency Sync
 
-Resources like Lottie JSONs are located in app/src/main/res/raw.
+Sync the Gradle files
 
-Launch:
+Lottie animation files are located at:
 
-Run on an Emulator or Physical Device (API 24+).
+app/src/main/res/raw/
+
+Launch
+
+Run on an emulator or physical device
+
+Minimum SDK: 24
+
+Notes for Reviewers
+
+No backend is used; all logic is implemented locally as per assignment requirements
+
+No global mutable state
+
+No UI logic inside the ViewModel
+
+No blocking calls on the main thread
+
+Focused on demonstrating understanding rather than template usage
+
+Author
+
+Archit Gupta
+B.Tech Computer Science and Engineering
+Specialization: Data Science and Machine Learning
