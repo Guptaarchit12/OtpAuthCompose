@@ -5,7 +5,8 @@ The project focuses on clean architecture, reactive state management, and modern
 
 ## Project Walkthrough & Setup
 
-Demo Video (Google Drive):
+Demo Video (Google Drive): https://drive.google.com/file/d/1r5H-gV-P_Rv_2OqJg8enGkH9idClinwQ/view?usp=drivesdk
+
 Includes repository cloning, architecture overview, and a live application walkthrough.
 (Drive access set to “Anyone with the link can view”)
 
