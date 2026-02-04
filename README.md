@@ -159,4 +159,4 @@ Focused on demonstrating understanding rather than template usage
 
 Archit Gupta
 B.Tech Computer Science and Engineering
-Specialization: Data Science and Machine Learning
+
